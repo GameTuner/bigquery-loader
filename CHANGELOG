@@ -1,0 +1,238 @@
+Version 1.4.3 (2022-09-20)
+--------------------------
+Bump snakeyaml to 1.32 (#305)
+
+Version 1.4.2 (2022-08-23)
+--------------------------
+Stream loader: Fix metrics when an insert has no successful rows (#302)
+Stream loader: Fix shutdown so it does not hang on exit (#303)
+
+Version 1.4.1 (2022-07-19)
+--------------------------
+Fix metrics when inserts has some failed rows (#296)
+Streamloader: add latency to stdout metrics reporter (#297)
+Ensure docker image has latest openssl and libfreetype6 versions (#295)
+
+Version 1.4.0 (2022-06-22)
+--------------------------
+Bump google-cloud-storage to 2.7.2 (#293)
+Bump google-cloud-pubsub to 1.119.0 (#292)
+Bump google-cloud-bigquery to 2.13.0 (#291)
+Use the http4s iglu registry lookup (#230)
+Bump cats effect to 3.3.12 (#290)
+Support config files passed on the command line (#282)
+
+Version 1.3.2 (2022-06-13)
+--------------------------
+Mutator: remove concurrency on table updates (#287)
+
+Version 1.3.1 (2022-06-10)
+--------------------------
+Pass projectId to BigQuery client (#261)
+Loader: Downgrade Guava to 29.0-jre (#286)
+Exclude beam-sdks-java-extensions-sql from scio-core and scio-google-cloud-platform (#284)
+Exclude jackson-mapper-asl from scio-core and scio-google-cloud-platform (#283)
+
+Version 1.3.0 (2022-05-10)
+--------------------------
+Bump google-oauth-client to 1.33.3 (#281)
+Fix graceful shutdown (#260)
+Publish distroless docker images (#279)
+Bump sbt-native-packager to 1.9.9 (#278)
+Bump jackson-databind to 2.13.2.2 (#275)
+Remove explicit version overrides of gson and fast-json (#280)
+Bump netty codec to 4.1.76.Final (#271)
+Bump scio to 0.11.7 (#270)
+Bump google-cloud-bigquery for beam to 2.9.4 (#269)
+Bump beam to 2.38.0 (#268)
+Bump dropwizard metrics to 4.1.31 (#267)
+Bump http4s-async-http-client to 0.22.12 (#266)
+Bump google-cloud-storage to 2.6.1 (#265)
+Bump google-cloud-pubsub to 1.116.4 (#264)
+Bump google-cloud-bigquery to 2.10.10 (#263)
+
+Version 1.2.0 (2022-02-25)
+--------------------------
+Streamloader: add retrySettings to BigQuery client (#248)
+Streamloader: add graceful shutdown (#249)
+Change docker base image to eclipse/temurin:11-jre-focal (#251)
+Bump scio-core to 0.11.4 (#252)
+Bump specs2-core to 4.13.2 (#254)
+Bump fs2-google-pubsub-grpc to 0.18.1 (#255)
+Bump log4cats-slf4j to 1.5.1 (#256)
+Bump schema-ddl to 0.14.4 (#253)
+
+Version 1.1.0 (2022-01-11)
+--------------------------
+Implement new metrics reporter for stdout (#238)
+Repeater: move statistics logs under metrics (#239)
+Stream Loader: integrate Sentry (#240)
+Repeater: integrate Sentry (#241)
+Mutator: integrate Sentry (#242)
+Bump log4cats to 1.4.0 (#246)
+Mutator: use logger instead of println (#244)
+Stream Loader: use logger instead of println (#245)
+Extend copyright to 2022 (#243)
+
+Version 1.0.2 (2021-12-17)
+--------------------------
+Bump scio to 0.11.1 and beam to 2.33.0 (#232)
+Bump gson to 2.8.9 (#234)
+Beam loader: Pin bigquery sdk to 1.135.3 (#236)
+Bump google sdks using google-cloud-bom 0.163.0 (#235)
+
+Version 1.0.1 (2021-10-29)
+--------------------------
+Use sbt-dynver plugin (#227)
+Repeater: change filename logging level to info (#222)
+Repeater: fix typos in cli options' help text (#221)
+Add monitoring defaults to application.conf (#220)
+Bump fs2-google-cloud-pubsub to 0.18.0 (#226)
+Bump google-cloud-pubsub to 1.114.3 (#225)
+Bump google-cloud-storage to 2.1.1 (#224)
+Bump google-cloud-bigquery to 2.1.6 (#223)
+
+Version 1.0.0 (2021-10-06)
+--------------------------
+Switch from JSON to HOCON in config file (#186)
+Make the --config flag optional (#214)
+Add load_tstamp field (#140)
+Add metrics in StreamLoader and Repeater (#165)
+StreamLoader: drop intermediary queue for writing out observed types (#183)
+StreamLoader: batch events in BigQuery write request (#192)
+Mutator: add table partitioning to create command (#113)
+Repeater: fix logging of number of inserted records (#143)
+Repeater: remove PayloadParser (#215)
+Repeater: make EventContainer codecs isomorphic (#141)
+Loader: drop waitUntilDone from runner (#145)
+Forwarder: remove from working tree (#121)
+Bump schema-ddl to 0.14.2 (#197)
+Bump netty-codec version to 4.1.48.Final (#198)
+Bump metrics-core to 4.1.25 (#199)
+Bump slf4j-simple to 1.7.32 (#200)
+Bump cats-core to 2.6.1 (#201)
+Bump cats-effect to 2.5.4 (#202)
+Bump circe to 0.14.1 (#203)
+Bump decline to 1.4.0 (#204)
+Bump fs2-core to 2.5.9 (#205)
+Bump netty-codec-http version to 4.1.61.Final (#206)
+Bump http4s-async-http-client to 0.22.5 (#207)
+Bump snowplow-badrows to 2.1.1 (#208)
+Bump iglu-scala-client to 1.1.1 (#209)
+Bump iglu-core-circe to 1.0.1 (#210)
+Bump specs2-core to 4.12.12 (#212)
+Bump sbt to 1.5.5 (#213)
+Remove scalacheck dependency (#211)
+Change base image to adoptopenjdk:8-jre-hotspot-focal (#188)
+Publish arm64 and amd64 docker images (#193)
+Github action to scan docker image with lacework (#195)
+
+Version 0.6.4 (2021-04-28)
+--------------------------
+Bump schema-ddl to 0.13.0 (#176)
+Bump sbt to 1.5.0 (#175)
+
+Version 0.6.3 (2021-04-01)
+--------------------------
+Loader: use optimizedWrites (#172)
+Add TransformJsonBenchmark, FromEventBenchmark and GroupContextsBenchmark (#162)
+Bump iglu-scala-client to 1.0.2 (#163)
+Use snowplow/base-debian image from Docker Hub (#164)
+
+Version 0.6.2 (2021-01-27)
+--------------------------
+Add benchmark module (#148)
+Migrate from Travis to Github Actions (#149)
+Bump snowplow-scala-analytics-sdk to 2.1.0 (#150)
+Bump scio-core to 0.9.6 (#151)
+Bump metrics-core to 4.1.17 (#152)
+Bump cats-effect to 2.3.1 (#153)
+Bump fs2-core to 2.5.0 (#154)
+Bump http4s-async-http-client to 0.21.15 (#155)
+Extend copyright to 2021 (#158)
+
+Version 0.6.1 (2020-10-08)
+--------------------------
+Common: do not drop contexts when creating TableRow from enriched event (#136)
+
+Version 0.6.0 (2020-09-28)
+--------------------------
+Add Snowplow BigQuery StreamLoader (#116)
+Fix ignored project id from the config (#104)
+Bump Scala to 2.13 (#115)
+Bump scio-core to 0.9.4 (#114)
+Integrate Snyk (#117)
+Common: fix jackson-databind version to 2.9.10.6 (#128)
+Common: fix netty-codec version to 4.1.46.Final (#129)
+Common: fix netty-codec-http version to 4.1.44.Final (#130)
+Common: fix fastjson version to 1.2.69 (#131)
+Common: fix google-oauth-client version to 1.31.0 (#132)
+
+Version 0.5.1 (2020-06-08)
+--------------------------
+Remove LoaderCache.scala (#107)
+
+Version 0.5.0 (2020-05-19)
+--------------------------
+Loader: replace Scio metrics with Dropwizard metrics (#82)
+Remove the launch parameter used to set up GCP labels (#83)
+Cache Field.build result (#64)
+Repeater: mention life span in statistics logs (#47)
+Forwarder: deprecate (#74)
+Use sbt-scalafmt plugin (#66)
+Re-order dependencies (#69)
+Add projectSettings for each module (#70)
+Bump sbt to 1.3.10 (#68)
+Bump google-cloud-bigquery to 1.111.0 (#92)
+Bump slf4j-simple to 1.7.30 (#93)
+Bump http4s-async-http-client to 0.20.23 (#94)
+Bump snowplow-scala-analytics-sdk to 1.0.0 (#96)
+Bump snowplow-badrows to 1.0.0 (#97)
+Bump snowplow-processing-manifest to 0.2.0 (#98)
+Bump schema-ddl to 0.10.0 (#99)
+Bump specs2 to 4.8.0 (#100)
+Common: link docs.snowplowanalytics.com website in README (#60)
+
+Version 0.4.2 (2020-04-27)
+--------------------------
+Repeater: do not set ACL for GCS files (#89)
+
+Version 0.4.1 (2020-04-14)
+--------------------------
+Repeater: change log messages ERROR level to INFO (#77)
+Repeater: improve CPU utilization (#78)
+Bump fs2-google-pubsub-http to 0.14.0 (#79)
+
+Version 0.4.0 (2020-03-09)
+--------------------------
+Loader: add a custom metric to track latency distribution (#55)
+Mutator: replace decorateAsJava with JavaConverters in TableReference.scala (#51)
+Common: make pattern match in `Adapter.adaptType()` exhaustive (#59)
+Bump scio-core to 0.8.2 (#57)
+Bump Scala to 2.12.10 (#58)
+
+Version 0.3.0 (2020-02-20)
+--------------------------
+Add support for GCP labels in dataflow launcher docker image (#41)
+Switch Forwarder to using subscription (#15)
+Use SerializeJsonRow as FormatFunction in Forwarder (#16)
+Bump cats-core to 1.6.1 (#49)
+Bump cats-effect to 1.4.0 (#50)
+Bump fs2-core to 1.0.5 (#52)
+Update README (#43)
+
+Version 0.2.0 (2020-02-11)
+--------------------------
+Add Snowplow BigQuery Repeater (#20)
+Use snowplow-badrows (#33)
+Bump Schema DDL to 0.9.0 (#18)
+Bump Scala Analytics SDK to 0.4.2 (#21)
+Bump Iglu Client to 0.6.2 (#34)
+Bump Scio to 0.8.1 (#29)
+Bump Scala to 2.12.8 (#35)
+Change Travis distribution to Trusty (#37)
+Extend copyright to 2020 (#42)
+
+Version 0.1.0 (2018-12-03)
+--------------------------
+Initial release

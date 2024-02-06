@@ -1,0 +1,27 @@
+# This will not release the service. After building, go to ui console, stop dataflow job with drain
+# and then run terraform apply to release it safely
+# Check this for a better way: https://stackoverflow.com/questions/49944992/is-it-possible-to-update-existing-google-cloud-dataflow-pipelines-when-using-tem/71866801#71866801
+
+substitutions:
+  _SERVICE: gametuner-bigquery-loader
+  _ARTIFACT_REPOSITORY: gametuner-pipeline-services
+steps:
+  - name: "sbtscala/scala-sbt:eclipse-temurin-11.0.16_1.7.2_2.12.17"
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        sbt "project loader" assembly
+        cp modules/loader/target/scala-2.13/*.jar /workspace/bigquery-loader.jar
+
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    args: ["gcloud", "dataflow", "flex-template", "build",
+           "gs://placeholder_path",
+           "--print-only",
+           "--image-gcr-path=$LOCATION-docker.pkg.dev/$PROJECT_ID/$_ARTIFACT_REPOSITORY/$_SERVICE",
+           "--jar=/workspace/bigquery-loader.jar",
+           "--flex-template-base-image=JAVA11", "--sdk-language=JAVA",
+           "--env=FLEX_TEMPLATE_JAVA_MAIN_CLASS=com.snowplowanalytics.snowplow.storage.bigquery.loader.Main"]
+serviceAccount: 'projects/$PROJECT_ID/serviceAccounts/cloudbuild@$PROJECT_ID.iam.gserviceaccount.com'
+options:
+  logging: CLOUD_LOGGING_ONLY
